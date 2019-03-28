@@ -1,0 +1,4 @@
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlp*", RUN+="/usr/bin/iw dev $name set power_save on"
+ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="med_power_with_dipm"
+SUBSYSTEM=="pci", ATTR{power/control}="auto"
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
